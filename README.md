@@ -1,0 +1,1 @@
+该项目是基于：[ZXingLib](https://github.com/xuyisheng/ZXingLib) 进行修改的，更改了扫描界面，添加了类`RGBLuminanceSource(scanBitmap)`,可以进行从图片中识别条形码/二维码；具体使用请参见我的博客：http://blog.csdn.net/txadf/article/details/52152924
