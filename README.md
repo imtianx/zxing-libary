@@ -1,1 +1,23 @@
-¸ÃÏîÄ¿ÊÇ»ùÓÚ£º[ZXingLib](https://github.com/xuyisheng/ZXingLib) ½øĞĞĞŞ¸ÄµÄ£¬¸ü¸ÄÁËÉ¨Ãè½çÃæ£¬Ìí¼ÓÁËÀà`RGBLuminanceSource(scanBitmap)`,¿ÉÒÔ½øĞĞ´ÓÍ¼Æ¬ÖĞÊ¶±ğÌõĞÎÂë/¶şÎ¬Âë£»¾ßÌåÊ¹ÓÃÇë²Î¼ûÎÒµÄ²©¿Í£ºhttp://blog.csdn.net/txadf/article/details/52152924
+è¯¥é¡¹ç›®æ˜¯åŸºäºï¼š[ZXingLib](https://github.com/xuyisheng/ZXingLib) è¿›è¡Œä¿®æ”¹çš„ï¼Œæ›´æ”¹äº†æ‰«æç•Œé¢ï¼Œæ·»åŠ äº†ç±»`RGBLuminanceSource(scanBitmap)`,å¯ä»¥è¿›è¡Œä»å›¾ç‰‡ä¸­è¯†åˆ«æ¡å½¢ç /äºŒç»´ç ï¼›å…·ä½“ä½¿ç”¨è¯·å‚è§æˆ‘çš„åšå®¢ï¼šhttp://blog.csdn.net/txadf/article/details/52152924 <br>
+
+
+æ‰«æè¯†åˆ«äºŒç»´ç ï¼š
+```
+Intent intent = new Intent(MainActivity.this,CaptureActivity.class);
+startActivityForResult(intent, 0);
+```
+åœ¨`onActivityResult`ä¸­å¤„ç†è¿”å›ç»“æœï¼š
+```
+@Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+      super.onActivityResult(requestCode, resultCode, data);
+      if(requestCode == 0)
+      {
+        if (resultCode == RESULT_OK) {
+            Bundle bundle = data.getExtras();
+            String result = bundle.getString("result");
+            ToastUtils.showToast(MainActivity.this,result);
+        }
+      }
+  }
+```
